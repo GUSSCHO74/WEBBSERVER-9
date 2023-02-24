@@ -1,0 +1,23 @@
+<head>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<h1>Comment section</h1>
+<form action="/add_posts" method="post">
+  Name:<br />
+  <input type="text" name="name" required />
+  <br />
+  Comment:<br />
+  <input type="text" name="comment" required />
+  <br />
+  <input type="submit" value="Submit" />
+</form>
+
+<h1>Comments</h1>
+  {{#each result}}
+    <div>
+      <h2>{{this.name}}</h2> 
+      <div>{{this.comment}}</div>
+    </div>
+  {{else}}
+    Den här användaren har inte postat något.
+  {{/each}}
